@@ -98,8 +98,37 @@ Example: Gold position
 
 - Hyperparameter optimization ($\kappa$, $\lambda$)
 - Rolling retraining
-- Risk constraints
-- Multi-asset extensions
+- Risk constraints (leverage, exposure limits)
+
+---
+
+## Next Step: Towards Propagator Models
+
+The next step of this project is to move beyond the Garleanu & Pedersen framework and incorporate more realistic models of market impact.
+
+In particular, we aim to study the recent paper:
+
+> *Optimal Portfolio Choice with Cross-Impact Propagators* (Abi Jaber, Neuman, Tuschmann, 2026)
+
+This framework introduces:
+
+- **Transient price impact with memory**, modeled via propagators  
+- **Cross-impact between assets**, capturing interactions across markets  
+- A **non-Markovian optimal control problem**, significantly more realistic than classical models  
+
+In these models, price distortion is given by:
+
+$$
+D_t = \int_0^t G(t,s)\, dX_s
+$$
+
+where $G(t,s)$ captures both temporal decay and cross-asset effects.
+
+This extension will allow us to:
+
+- Better model **execution in real markets**
+- Capture **long-memory effects in price impact**
+- Understand how **alpha decay interacts with market impact dynamics**
 
 ---
 
